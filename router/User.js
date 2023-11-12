@@ -83,4 +83,47 @@ userRouter.get(
     }
 );
 
+// ...
+
+// Sửa thông tin role người dùng
+userRouter.put("/updateRole/:id", (req, res) => {
+    const userId = req.params.id;
+    const { role } = req.body;
+
+    User.findByIdAndUpdate(userId, { role }, { new: true }, (err, user) => {
+        if (err) {
+            res.status(500).json({
+                message: { msgBody: "Error", msgError: true },
+            });
+        } else {
+            res.status(200).json({
+                message: { msgBody: "Cập nhật role thành công", msgError: false },
+                user: { _id: user._id, username: user.username, role: user.role },
+            });
+        }
+    });
+});
+
+
+// Lấy tất cả người dùng
+userRouter.get("/getAllUsers", (req, res) => {
+    User.find({}, (err, users) => {
+        if (err) {
+            res.status(500).json({
+                message: { msgBody: "Error", msgError: true },
+            });
+        } else {
+            res.status(200).json({
+                message: { msgBody: "Lấy danh sách người dùng thành công", msgError: false },
+                users: users.map((user) => ({
+                    _id: user._id,
+                    username: user.username,
+                    role: user.role,
+                })),
+            });
+        }
+    });
+});
+
+
 module.exports = userRouter;
