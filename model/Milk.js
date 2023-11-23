@@ -23,6 +23,10 @@ const MilkSchema = new mongoose.Schema({
     total: {
         type: String,
         required: true,
+    },
+    star: {
+        type: Array,
+        required: false,
     }
 });
 

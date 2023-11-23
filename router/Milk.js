@@ -3,7 +3,7 @@ const milkRouter = express.Router();
 const passport = require("passport");
 const Milk = require("../model/Milk");
 
-//api tao ao 
+//api tao sữa
 milkRouter.post(
     "/createMilk",
     // passport.authenticate('jwt', { session: false }),
@@ -89,7 +89,7 @@ milkRouter.post(
     }
 )
 
-//api lay all ao
+//api lay all sữa
 milkRouter.get(
     "/getAllMilk",
     // passport.authenticate('jwt', { session: false }),
@@ -178,12 +178,12 @@ milkRouter.post(
     }
 )
 
-//api like, comment ao
+//api like, comment sữa
 milkRouter.patch(
     "/updateMilk",
     // passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        const data = ({ _id, name, describe, image, price, supplier, total } = req.body);
+        const data = ({ _id, name, describe, image, price, supplier, total, star } = req.body);
 
         const updates = data;
 

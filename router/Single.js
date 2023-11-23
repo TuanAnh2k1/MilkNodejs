@@ -3,7 +3,7 @@ const singleRouter = express.Router();
 const passport = require("passport");
 const Single = require("../model/Single");
 
-//api tao đơn hàng 
+//api tao mới đơn hàng 
 singleRouter.post(
     "/createSingle",
     // passport.authenticate('jwt', { session: false }),
