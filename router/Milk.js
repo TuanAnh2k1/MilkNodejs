@@ -183,7 +183,7 @@ milkRouter.patch(
     "/updateMilk",
     // passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        const data = ({ _id, name, describe, image, price, supplier, total, star, is_Star } = req.body);
+        const data = ({ _id, name, describe, image, price, supplier, total, star } = req.body);
 
         const updates = { ...data, star: Array.isArray(data.star) ? data.star : [] };
 

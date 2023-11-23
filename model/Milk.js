@@ -29,11 +29,6 @@ const MilkSchema = new mongoose.Schema({
         required: false,
         default: [],
     },
-    is_Star: {
-        type: Number,
-        require: false,
-        default: 0,
-    }
 });
 
 module.exports = mongoose.model("Milk", MilkSchema);

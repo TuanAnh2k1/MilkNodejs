@@ -176,7 +176,8 @@ singleRouter.patch(
             phone,
             address,
             quantity,
-            status
+            status,
+            is_Star
         } = req.body);
 
         const updates = data;

@@ -47,6 +47,11 @@ const SingleSchema = new mongoose.Schema({
     status: {
         type: String,
         required: true,
+    },
+    is_Star: {
+        type: Number,
+        require: false,
+        default: 0,
     }
 });
 
