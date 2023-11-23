@@ -27,6 +27,7 @@ const MilkSchema = new mongoose.Schema({
     star: {
         type: Array,
         required: false,
+        default: [],
     }
 });
 
