@@ -185,7 +185,7 @@ milkRouter.patch(
     (req, res) => {
         const data = ({ _id, name, describe, image, price, supplier, total, star } = req.body);
 
-        const updates = data;
+        const updates = { ...data, star: Array.isArray(data.star) ? data.star : [] };
 
         const options = { new: true };
         Milk.updateOne({ _id }, updates, options).then((result) => {
